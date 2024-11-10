@@ -1,0 +1,2 @@
+add_subdirectory(dv_big_int EXCLUDE_FROM_ALL)
+add_subdirectory(dviglo2d EXCLUDE_FROM_ALL)

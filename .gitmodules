@@ -1,0 +1,6 @@
+[submodule "external/dviglo2d"]
+	path = external/dviglo2d
+	url = https://github.com/dviglo2d/dviglo2d
+[submodule "external/dv_big_int"]
+	path = external/dv_big_int
+	url = https://github.com/dviglo2d/dv_big_int

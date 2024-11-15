@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 # Удаляет пробелы в конце строк
 
 import os
@@ -27,11 +29,14 @@ def remove_trailing_spaces(file_path):
 
 if __name__ == '__main__':
     repo_dir = os.path.dirname(os.path.realpath(__file__))
+    ignored_dirs = {'.git', 'external'}
     exts = {'.bat', '.sh', '.md', '.hpp', '.cpp', '.txt', '.py', '.yml', '.editorconfig', '.gitattributes', '.gitignore'}
 
     for root, dirs, files in os.walk(repo_dir):
-        if '.git' in dirs: # Не заходим в папку .git
-            dirs.remove('.git')
+        if root == repo_dir:
+            for ignired_dir in ignored_dirs:
+                if ignired_dir in dirs:
+                    dirs.remove(ignired_dir)
 
         for file in files:
             if any(file.endswith(ext) for ext in exts):
